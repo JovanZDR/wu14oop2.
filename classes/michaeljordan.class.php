@@ -5,5 +5,5 @@ class Michaeljordan extends Player {
 	public $layup;
 	public $rebound;
 	public $defence;
-
+	
 }

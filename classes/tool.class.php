@@ -1,5 +1,5 @@
 <?php
 
-class Tool extends Base {
+class Tool {
 	
 }

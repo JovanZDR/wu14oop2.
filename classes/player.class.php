@@ -1,6 +1,6 @@
 <?php
 
-class Player extends Base {
+class Player  {
 
 	public $name;
 
@@ -14,11 +14,5 @@ class Player extends Base {
 	public function __construct ($name){
 		$this->name = $name;
 	}
-	public function compete(){
-		
-	}
-
-	public function isAlive(){
-		return $this->success > 0;
-	}
+	
 }

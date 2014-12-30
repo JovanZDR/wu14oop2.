@@ -1,5 +1,5 @@
 <?php
 
-class Challenge extends Base {
+class Challenge {
 
 }
