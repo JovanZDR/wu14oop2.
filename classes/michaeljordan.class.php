@@ -1,6 +1,6 @@
 <?php
 
-class Michaeljordan extends Player {
+class Michaeljordan extends Character {
 	public $shoot;
 	public $layup;
 	public $rebound;
