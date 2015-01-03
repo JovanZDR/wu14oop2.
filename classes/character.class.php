@@ -22,7 +22,7 @@ class Character extends Base {
 	}
 
 	public function take_item(&$item){
-		if(count($item) < 4){
+		if(count($item) < 3){
 		$this->give($item);
 		$this->items[] = $item;
 		return $this->name."got".get_class($item);
@@ -31,6 +31,10 @@ class Character extends Base {
 		return $this->name."already has three items, can not have more";
 		}
 	}
+	public function isAlive(){
+    
+    return $this->success > 0;
+  }
 
 	public function get__name(){
 		return $this->name;

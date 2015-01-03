@@ -20,7 +20,7 @@ $(function() {
 		$(".storyEvent").html("");
 		$(".storyOptions").html("");
 
-		$(".storyData").append("<h2>Who are you?</h2>")
+		$(".storyEvent").append("<h2>Who are you?</h2>")
 
 		$(".storyOptions").append("<h3>Write your name:</h3>")
 		$(".storyOptions").append('<input type ="text" id = "startNewGame" placeholder = "players name">')

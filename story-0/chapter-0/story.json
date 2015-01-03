@@ -1,0 +1,66 @@
+[
+  {
+    "pos" : 0,
+    "title" : "Beginning of a really long day",
+    "location" : {
+      "lid" : 22,
+      "name" : "A Place.",
+      "img" : "something.jpg",
+      "description" : "Locations will be made into separate data files"
+    },
+    "description" : "You wake up suddenly from a combination of weird dreams and a noisy neighbor outside.",
+    "options" : [
+      {
+        "option_no" : 0,
+        "name" : "Look around you",
+        "description" : "",
+        "action" : []
+      },
+      {
+        "option_no" : 1,
+        "name" : "Drink some water",
+        "description" : "",
+        "action" : [
+          {
+            "type" : "consume",
+            "event" : {
+              "do" : "Water"
+            }
+          }
+        ]
+      },
+      {
+        "option_no" : 3,
+        "name" : "acceptChallenge",
+        "description" : "",
+        "action" : []
+      },
+      {
+        "option_no" : 4,
+        "name" : "changeChallenge",
+        "description" : "",
+        "action" : []
+      },
+      {
+        "option_no" : 5,
+        "name" : "carryOutChallenge",
+        "description" : "",
+        "action" : []
+      },
+      {
+        "option_no" : 6,
+        "name" : "carryOutChallengeWithCompanion",
+        "description" : "",
+        "action" : []
+      }
+    ],
+    "rewards" : [
+      {
+        "for_option_no" : 1,
+        "reward_item" : "Reward",
+        "reward_type" : "numberTwo",
+        "qty" : 1
+      }
+    ]
+  }
+]
