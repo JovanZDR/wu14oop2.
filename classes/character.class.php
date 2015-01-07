@@ -3,6 +3,7 @@
 class Character{
 
 	public $name;
+	
 
 	public $items = array();
 
@@ -12,3 +13,4 @@ class Character{
 		$this->name = $name;
 	}
 }
+var_dump($characters);

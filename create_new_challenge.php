@@ -1,6 +1,5 @@
 <?php
 
-
 include_once("nodebite-swiss-army-oop.php");
 
 $ds = new DBObjectSaver(array(

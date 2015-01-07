@@ -186,7 +186,7 @@ $random_number = rand(0, count($challenges)-1);
 $random_challenge = $challenges[$random_number];
 $characters[0]->challenges[] = $random_challenge;
 
-
+var_dump($characters);
 
 
 

@@ -1,6 +1,6 @@
 $(function() {
 
-function selectCharacter(storyData) {
+  function selectCharacter() {
     
     $(".storyEvent").html('');
     $(".storyOptions").html('');
@@ -13,7 +13,7 @@ function selectCharacter(storyData) {
     $(".storyOptions").append('<input type="text" id="characterName" placeholder="character name">');
 
    
-    var availableCharacters = ["Michaeljordan","Lebronjames","Kobebrayant"];
+    var availableCharacters = ["Michaeljordan","Lebronjames","Kobebryant"];
 
     $(".storyOptions").append('<h3>Choose your characters class:</h3>');
    
@@ -28,9 +28,7 @@ function selectCharacter(storyData) {
       var characterName = $("#characterName").val();
       var characterClass = $(".storyOptions input[type='radio']:checked").val();
      
-      if (!characterName || !characterClass) {
-
-      } else {
+      
       
         $.ajax({
           url: "create_players.php",
@@ -41,14 +39,17 @@ function selectCharacter(storyData) {
           },
           success:function(data){
             console.log("success: ", data);
+
           },
           error: function(data) {
             console.log("startNewGame error: ", data.responseText);
           }
         });
-      }
+      
     });
   }
+
+
   selectCharacter();
 
 });
