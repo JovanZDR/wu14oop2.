@@ -11,12 +11,37 @@ $ds = new DBObjectSaver(array(
 ));
 
 
-
-
+unset($ds->challenges);
+unset($ds->items);
+unset($ds->characters);
 
  $challenges = &$ds->challenges;
-//$characters = array();
  $items = &$ds->items;
+ $characters = &$ds->characters;
+
+if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
+	$humanName = $_REQUEST["characterName"];
+	$humanClass = $_REQUEST["characterClass"];
+//	if (count($ds->character[0]) === 0) {
+		$ds->character[] = new $humanClass($humanName);
+		$character = &$ds->character[0];
+		$human_val_now = array(
+			"name" => $character->name,
+			"shootStrength" => $character->shootStrength, 
+			"layupStrength" => $character->layupStrength, 
+			"reboundStrength" => $character->reboundStrength,
+			"defenceStrength" => $character->defenceStrength,
+			"success" => $character->success
+						
+		);
+		//echo(json_encode($human_val_now));
+	//} else {
+	//	$character = &$ds->character[0];
+	}
+}
+
+
+
 
 
 $challenges[] = new Challenge(
@@ -136,7 +161,7 @@ $challenges[] = new Challenge(
 //$characters[0]->challenges[] = $random_challenge;
 
 //var_dump($characters);
-var_dump($challenges);
+//var_dump($challenges);
 
 
 
