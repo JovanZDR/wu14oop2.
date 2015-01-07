@@ -13,4 +13,3 @@ class Character{
 		$this->name = $name;
 	}
 }
-var_dump($characters);
