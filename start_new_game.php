@@ -11,13 +11,6 @@ $ds = new DBObjectSaver(array(
 ));
 
 
-unset($ds->challenges);
-unset($ds->items);
-unset($ds->characters);
-
- $challenges = &$ds->challenges;
- $items = &$ds->items;
- $characters = &$ds->characters;
 
 if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 	$humanName = $_REQUEST["characterName"];
@@ -37,8 +30,17 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 		//echo(json_encode($human_val_now));
 	//} else {
 	//	$character = &$ds->character[0];
-	}
+	//}
+	}else{
+		exit();
 }
+unset($ds->challenges);
+unset($ds->items);
+unset($ds->characters);
+
+ $challenges = &$ds->challenges;
+ $items = &$ds->items;
+ $characters = &$ds->characters;
 
 
 
