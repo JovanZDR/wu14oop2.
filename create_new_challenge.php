@@ -14,8 +14,8 @@ $ds = new DBObjectSaver(array(
 
 
 
-$challenges = array();
-$characters = array();
+ $challenges = &$ds->challenges;
+//$characters = array();
 
 
 $challenges[] = new Challenge(
@@ -130,9 +130,10 @@ $challenges[] = new Challenge(
 );
 
 
-$random_number = rand(0, count($challenges)-1);
-$random_challenge = $challenges[$random_number];
-$characters[0]->challenges[] = $random_challenge;
+//$random_number = rand(0, count($challenges)-1);
+//$random_challenge = $challenges[$random_number];
+//$characters[0]->challenges[] = $random_challenge;
 
-var_dump($characters);
+//var_dump($characters);
+var_dump($challenges);
 
