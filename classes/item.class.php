@@ -26,5 +26,5 @@ $items[] = New Item("Meat", array("defence" => 15 ,));
 $random_index = rand(0, count($items)-1);
 $random_tool = $items[$random_index];
 $characters[0]->items[] = $random_tool;
-Why is the value always Null?
+
 var_dump($characters);
