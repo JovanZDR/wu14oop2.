@@ -4,10 +4,10 @@ include_once("nodebite-swiss-army-oop.php");
 
 $ds = new DBObjectSaver(array(
   "host" => "127.0.0.1",
-  "dbname" => "wu14oopTenta",
+  "dbname" => "wu14oop2",
   "username" => "root",
   "password" => "mysql",
-  "prefix" => "wu14oopTenta",
+  "prefix" => "wu14oop2",
 ));
 
 
@@ -15,9 +15,9 @@ $ds = new DBObjectSaver(array(
 if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 	$humanName = $_REQUEST["characterName"];
 	$humanClass = $_REQUEST["characterClass"];
-//	if (count($ds->character[0]) === 0) {
-		$ds->character[] = new $humanClass($humanName);
-		$character = &$ds->character[0];
+
+		$ds->characters[] = new $humanClass($humanName);
+		$character = &$ds->characters[0];
 		$human_val_now = array(
 			"name" => $character->name,
 			"shootStrength" => $character->shootStrength, 
@@ -27,11 +27,9 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 			"success" => $character->success
 						
 		);
-		//echo(json_encode($human_val_now));
-	//} else {
-	//	$character = &$ds->character[0];
-	//}
+		
 	}else{
+		echo(json_encode(false));
 		exit();
 }
 unset($ds->challenges);
@@ -183,5 +181,5 @@ $items[] = New Item("Meat", array("defence" => 15 ,));
 //$random_tool = $items[$random_index];
 //$characters[0]->items[] = $random_tool;
 
-//var_dump($characters);
+
 

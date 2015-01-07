@@ -31,7 +31,7 @@ $(function() {
       
       
         $.ajax({
-          url: "create_players.php",
+          url: "start_new_game.php",
           dataType: "json",
           data: {
               characterName : characterName,
