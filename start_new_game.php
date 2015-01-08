@@ -31,7 +31,9 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 	}else{
 		echo(json_encode(false));
 		exit();
-}
+	}
+echo(json_encode($human_val_now));
+
 unset($ds->challenges);
 unset($ds->items);
 unset($ds->characters);
@@ -158,28 +160,27 @@ $challenges[] = new Challenge(
 
 //$random_number = rand(0, count($challenges)-1);
 //$random_challenge = $challenges[$random_number];
-//$characters[0]->challenges[] = $random_challenge;
-
-//var_dump($characters);
-//var_dump($challenges);
 
 
 
 
-$items[] = New Item("Socks", array("shoot" => 40 ,));
-$items[] = New Item("Tape", array("layup" => 20 ,));
-$items[] = New Item("Water", array("defence" => 30 ,));
-$items[] = New Item("Gatorade", array("rebound" => 20 ,));
-$items[] = New Item("Pepsi", array("shoot" => 10 ,));
-$items[] = New Item("Shoes", array("layup" => 30 ,));
-$items[] = New Item("Lemonade", array("rebound" => 10 ,));
-$items[] = New Item("Sandwich", array("layup" => 15 ,));
-$items[] = New Item("Chocolate", array("shoot" => 10 ,));
-$items[] = New Item("Meat", array("defence" => 15 ,));
+
+
+
+
+
+
+$items[] = New Item("Socks", array("shoot" => 40 ));
+$items[] = New Item("Tape", array("layup" => 20 ));
+$items[] = New Item("Water", array("defence" => 30 ));
+$items[] = New Item("Gatorade", array("rebound" => 20 ));
+$items[] = New Item("Pepsi", array("shoot" => 10 ));
+$items[] = New Item("Shoes", array("layup" => 30 ));
+$items[] = New Item("Lemonade", array("rebound" => 10 ));
+$items[] = New Item("Sandwich", array("layup" => 15 ));
+$items[] = New Item("Chocolate", array("shoot" => 10 ));
+$items[] = New Item("Meat", array("defence" => 15 ));
  
 //$random_index = rand(0, count($items)-1);
 //$random_tool = $items[$random_index];
-//$characters[0]->items[] = $random_tool;
-
-
 

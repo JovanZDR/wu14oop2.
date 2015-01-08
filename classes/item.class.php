@@ -8,4 +8,5 @@ class Item{
 		$this->description = $description;
 		$this->skills = $skills;
 	}	
+	
 }
