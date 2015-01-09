@@ -25,6 +25,7 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 			"reboundStrength" => $character->reboundStrength,
 			"defenceStrength" => $character->defenceStrength,
 			"success" => $character->success
+
 						
 		);
 		
