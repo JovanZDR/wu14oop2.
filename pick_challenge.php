@@ -23,4 +23,4 @@ if (isset($_REQUEST["changeChallenge"])) {
 	$random_number = rand(0, count($challenges)-1);
 }
 $random_challenge = $challenges[$random_number];
-echo(json_encode(array("random_challenge" => $random_challenge, "random_number" => $random_number)));
+echo(json_encode($random_challenge));

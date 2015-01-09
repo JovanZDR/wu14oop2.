@@ -35,6 +35,21 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 	}
 echo(json_encode($human_val_now));
 
+$all_classes = array("Kobebryant", "Lebronjames", "Michaeljordan");
+$random_class = $humanClass;
+while ($humanClass == $random_class) {
+  $randomIndex = rand(0, count($all_classes) - 1);
+  $random_class = $all_classes[$randomIndex];
+}
+$computer_player[] = New $random_class("Comp1");
+$random_class2 = $random_class;
+while ($humanClass == $random_class || $random_class2 == $random_class) {
+  $randomIndex = rand(0, count($all_classes) - 1);
+  $random_class = $all_classes[$randomIndex];
+}
+$computer_player[] = New $random_class("Comp2");
+
+
 unset($ds->challenges);
 unset($ds->items);
 unset($ds->characters);
@@ -105,7 +120,7 @@ $challenges[] = new Challenge(
 $challenges[] = new Challenge(
   "You are in Oslo. 
   Playing basketball in Oslo can be really fun if you are well prepared. 
-  Oslo is very sharming city",
+  Oslo is a very sharming city",
   array(
     "shoot" => 50,
     "layup" => 60,
@@ -116,7 +131,7 @@ $challenges[] = new Challenge(
 $challenges[] = new Challenge(
   "You are in Lomma. 
   Playing basketball in Lomma can be really fun if you are well prepared. 
-  Lomma is very sharming city",
+  Lomma is a very sharming city",
   array(
     "shoot" => 50,
     "layup" => 60,
@@ -127,7 +142,7 @@ $challenges[] = new Challenge(
 $challenges[] = new Challenge(
   "You are in Helsinborg. 
   Playing basketball in Helsinborg can be really fun if you are well prepared. 
-  Helsinborg is very sharming city",
+  Helsinborg is a very sharming city",
   array(
     "shoot" => 50,
     "layup" => 60,
@@ -138,7 +153,7 @@ $challenges[] = new Challenge(
 $challenges[] = new Challenge(
   "You are in Goteborg. 
   Playing basketball in Goteborg can be really fun if you are well prepared. 
-  Goteborg is very sharming city",
+  Goteborg is a very sharming city",
   array(
     "shoot" => 50,
     "layup" => 60,
@@ -149,7 +164,7 @@ $challenges[] = new Challenge(
 $challenges[] = new Challenge(
   "You are in Malmo. 
   Playing basketball in Malmo can be really fun if you are well prepared. 
-  Malmo is very sharming city",
+  Malmo is a very sharming city",
   array(
     "shoot" => 50,
     "layup" => 60,

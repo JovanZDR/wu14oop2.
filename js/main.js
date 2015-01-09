@@ -4,6 +4,7 @@ $(function() {
     
     $(".storyEvent").html('');
     $(".storyOptions").html('');
+     $(".acceptChallenge").html('');
 
     
     $(".storyEvent").append("<h2>Create your basketball player:</h2>");
@@ -62,41 +63,15 @@ $(function() {
     $('.facts').append("<h3>These are facts about you:</h3> <br>");
     for(var key in data) {
           if(data.hasOwnProperty(key)) {
-            $(".facts").append(key + " : " +data[key]+"<br>");
+            $(".facts").append(key + " : " +data[key] +"<br>");
           }
       getChallenge();
   }
-    
-  
-
-
-/*
-      
-      
-    $(".acceptChallenge").html("");
-    $(".changeChallenge").html('');
-    $(".carryOutChallengeWithCompanion").html("");
-    $(".carryOutChallenge").html('');
-
-  
-    $(".acceptChallenge").append('<button class="newChallenge">Get Challenge</button>');
-
-    $(".changeChallenge").append('<button>Change challenge</button>');
-    
-    $(".carryOutChallengeWithCompanion").append('<button>Carry out challenge with companion </button>');
-    
-    $(".carryOutChallenge").append('<button>Carry out challenge</button>');
-
-    $(".reset").append('<button >Reset-start from begining</button>');
-   */
-   
-      
-
 
   }
-
   function getChallenge(){
-    $(".acceptChallenge").append('<button class="newChallenge">Get Challenge</button>');
+  $(".acceptChallenge").html('');
+  $(".acceptChallenge").append('<button class="newChallenge">Get a Challenge</button>');
     $(".newChallenge").click(function() {
       $.ajax({
         url: "pick_challenge.php",
@@ -113,22 +88,41 @@ $(function() {
         }
       });
     });
-
   }
+ 
   function changeChallenge(data){
     $(".acceptChallenge").html('');
-     $(".currentChallenge").show();
-      $('.currentChallenge').append("<h3>These this is your challenge:</h3> <br>");
+     
+      $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
       for(var key in data) {
+
           if(data.hasOwnProperty(key)) {
             $(".currentChallenge").append(key + " : " +data[key]+"<br>");
           }
      
       }
+  
+  $(".acceptChallenge").html('');
+  $(".acceptChallenge").append('<button class="newestChallenge">If you do not like it, get a new Challenge</button>');
+  $(".newestChallenge").click(function() {
+      $.ajax({
+        url: "pick_challenge.php",
+        dataType: "json",
+        data: {
+        
+        },
+        success:function(data){
+          console.log("success",data);
+        
+        },
+        error: function(data) {
+          console.log("startNewGame error: ", data.responseText);
+        }
+      });
+    });
 
-
-
-  }
+}
+  
   
 
   selectCharacter();
