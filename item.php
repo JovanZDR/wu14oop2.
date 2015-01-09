@@ -16,7 +16,7 @@ $ds = new DBObjectSaver(array(
  $items = &$ds->items;
 
  if (isset($_REQUEST["changeItem"])) {
-	 $random_item_number = $_REQUEST["changeItem"]; //should be replaced with data from $_REQUEST
+	 $random_item_number = $_REQUEST["changeItem"]; 
 	
 	
 } else {
