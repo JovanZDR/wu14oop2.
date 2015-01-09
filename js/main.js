@@ -65,12 +65,9 @@ $(function() {
           if(data.hasOwnProperty(key)) {
             $(".facts").append(key + " : " +data[key] +"<br>");
           }
-      getChallenge();
-  }
-
-  }
-  function getChallenge(){
-  $(".acceptChallenge").html('');
+     
+    }
+   $(".acceptChallenge").html('');
   $(".acceptChallenge").append('<button class="newChallenge">Get a Challenge</button>');
     $(".newChallenge").click(function() {
       $.ajax({
@@ -88,7 +85,9 @@ $(function() {
         }
       });
     });
+
   }
+  
  
   function changeChallenge(data){
     $(".acceptChallenge").html('');
@@ -113,7 +112,19 @@ $(function() {
         },
         success:function(data){
           console.log("success",data);
-        
+          $(".acceptChallenge").html('');
+            $('.currentChallenge').html('');
+     
+          $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
+            for(var key in data) {
+
+            if(data.hasOwnProperty(key)) {
+            $(".currentChallenge").append(key + " : " +data[key]+"<br>");
+            }
+     
+            }
+        changeChallenge();
+           $('.currentChallenge').html("");
         },
         error: function(data) {
           console.log("startNewGame error: ", data.responseText);
@@ -121,6 +132,9 @@ $(function() {
       });
     });
 
+}
+function printNewChallenge(data){
+    
 }
   
   
