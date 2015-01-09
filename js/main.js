@@ -104,6 +104,7 @@ $(function() {
   $(".acceptChallenge").html('');
   $(".acceptChallenge").append('<button class="newestChallenge">If you do not like it, get a new Challenge</button>');
   $(".newestChallenge").click(function() {
+    $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
       $.ajax({
         url: "pick_challenge.php",
         dataType: "json",
@@ -115,7 +116,7 @@ $(function() {
           $(".acceptChallenge").html('');
             $('.currentChallenge').html('');
      
-          $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
+         
             for(var key in data) {
 
             if(data.hasOwnProperty(key)) {
@@ -124,7 +125,7 @@ $(function() {
      
             }
         changeChallenge();
-           $('.currentChallenge').html("");
+           $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
         },
         error: function(data) {
           console.log("startNewGame error: ", data.responseText);
