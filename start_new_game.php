@@ -36,19 +36,11 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 echo(json_encode($human_val_now));
 
 $all_classes = array("Kobebryant", "Lebronjames", "Michaeljordan");
-$random_class = $humanClass;
-while ($humanClass == $random_class) {
-  $randomIndex = rand(0, count($all_classes) - 1);
-  $random_class = $all_classes[$randomIndex];
+for ($i=0; $i < count($all_classes); $i++) { 
+  if ($all_classes[$i] != $humanClass) {
+    $ds->characters[] = New $all_classes[$i]("Bot".$i, $ds);
+  }
 }
-$computer_player[] = New $random_class("Comp1");
-$random_class2 = $random_class;
-while ($humanClass == $random_class || $random_class2 == $random_class) {
-  $randomIndex = rand(0, count($all_classes) - 1);
-  $random_class = $all_classes[$randomIndex];
-}
-$computer_player[] = New $random_class("Comp2");
-
 
 unset($ds->challenges);
 unset($ds->items);
@@ -135,9 +127,9 @@ $challenges[] = New Challenge(
   Playing basketball in Lomma can be really fun if you are well prepared. 
   Lomma is a very sharming city. You need to have the following skills if you want to win.",
   array(
-    "shoot" => 50,
+    "shoot" => 30,
     "layup" => 60,
-    "rebound" => 0,
+    "rebound" => 20,
     "defence" => 40,
   )
 );
@@ -146,10 +138,10 @@ $challenges[] = New Challenge(
   Playing basketball in Helsinborg can be really fun if you are well prepared. 
   Helsinborg is a very sharming city. You need to have the following skills if you want to win.",
   array(
-    "shoot" => 50,
+    "shoot" => 10,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40,
+    "defence" => 80,
   )
 );
 $challenges[] = New Challenge(
@@ -157,10 +149,10 @@ $challenges[] = New Challenge(
   Playing basketball in Goteborg can be really fun if you are well prepared. 
   Goteborg is a very sharming city. You need to have the following skills if you want to win.",
   array(
-    "shoot" => 50,
+    "shoot" => 30,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40,
+    "defence" => 60,
   )
 );
 $challenges[] = New Challenge(
@@ -169,9 +161,9 @@ $challenges[] = New Challenge(
   Malmo is a very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
-    "layup" => 60,
+    "layup" => 100,
     "rebound" => 0,
-    "defence" => 40,
+    "defence" => 0,
   )
 );
 

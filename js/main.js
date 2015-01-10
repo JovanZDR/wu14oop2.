@@ -106,8 +106,14 @@ $(function() {
     $(".carryOutChallenge").html('');
     $(".carryOutChallenge").append('<button class="likeTheChallenge">But If you like it,PRESS HERE</button>');
     $(".likeTheChallenge").click(function() {
-    
-      
+      $(".acceptChallenge").html('');
+      $(".carryOutChallenge").html('');
+
+      $(".carryOutChallengeWithCompanion").html('');
+      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWFriend" id="1P" name="PLy"><label>Play with a friend</label><br>');
+      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWFriend" id="2p"name="PLy"><label>Be a brave player and  play alone</label><br>');
+      $(".carryOutChallengeWithCompanion").append('<button class="startPlaying">Submit and START PLAYING</button>');
+
     });
      
             
