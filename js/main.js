@@ -90,16 +90,18 @@ $(function() {
   
  
   function changeChallenge(data){
+    $('.changeChallenge').html("");
     $(".acceptChallenge").html('');
      
       $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
-      for(var key in data) {
+            
+           $(".currentChallenge").append("<p>description:" +data["description"]+"</p>");
+            $(".currentChallenge").append("<p>description:" +data["skills"]["shoot"]+"</p>");
+            $(".currentChallenge").append("<p>description:" +data["skills"]["layup"]+"</p>");
+            $(".currentChallenge").append("<p>description:" +data["skills"]["rebound"]+"</p>");
+             $(".currentChallenge").append("<p>description:" +data["skills"]["defence"]+"</p>");
 
-          if(data.hasOwnProperty(key)) {
-            $(".currentChallenge").append(key + " : " +data[key]+"<br>");
-          }
-     
-      }
+            
   
   $(".acceptChallenge").html('');
   $(".acceptChallenge").append('<button class="newestChallenge">If you do not like it, get a new Challenge</button>');
@@ -116,32 +118,32 @@ $(function() {
           $(".acceptChallenge").html('');
             $('.currentChallenge').html('');
      
-         
-            for(var key in data) {
-
-            if(data.hasOwnProperty(key)) {
-            $(".currentChallenge").append(key + " : " +data[key]+"<br>");
-            }
+        
+            $('.changeChallenge').append("<h3>This is your challenge:</h3> <br>");
+          $(".changeChallenge").append("<p>description:" +data["description"]+"</p>");
+            $(".changeChallenge").append("<p>description:" +data["skills"]["shoot"]+"</p>");
+            $(".changeChallenge").append("<p>description:" +data["skills"]["layup"]+"</p>");
+            $(".changeChallenge").append("<p>description:" +data["skills"]["rebound"]+"</p>");
+             $(".changeChallenge").append("<p>description:" +data["skills"]["defence"]+"</p>");
+             changeChallenge(data);
      
-            }
-        changeChallenge();
-           $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
+            
+       
         },
         error: function(data) {
           console.log("startNewGame error: ", data.responseText);
         }
+
       });
     });
 
 }
-function printNewChallenge(data){
-    
-}
+
   
   
 
   selectCharacter();
-  printEverythingOut(data);
+  
 
 
 });

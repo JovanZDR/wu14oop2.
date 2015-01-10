@@ -11,16 +11,27 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2",
 ));
 
-$challenges = &$ds->challenges;
 
-if (isset($_REQUEST["changeChallenge"])) {
-	$old_number = $_REQUEST["changeChallenge"]; //should be replaced with data from $_REQUEST
-	$random_number = $old_number;
-	while ($random_number == $old_number) {
-		$random_number = rand(0, count($challenges)-1);
-	}
+$last_challenge_index = isset($_REQUEST["changeChallenge"]) ? $_REQUEST["changeChallenge"] : false;
+
+
+
+
+if ($last_challenge_index !== false) {
+
+  $random_challenge_index = $last_challenge_index;
+  while ($random_challenge_index == $last_challenge_index) {
+    $random_challenge_index = rand(0, count($ds->challenges)-1);
+  }
 } else {
-	$random_number = rand(0, count($challenges)-1);
+ 
+  $random_challenge_index = rand(0, count($ds->challenges)-1);
 }
-$random_challenge = $challenges[$random_number];
-echo(json_encode($random_challenge));
+
+
+unset($ds->current_challenge);
+
+$ds->current_challenge[] = $ds->challenges[$random_challenge_index];
+
+
+echo(json_encode($ds->current_challenge[0]));
