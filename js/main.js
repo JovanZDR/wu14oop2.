@@ -67,8 +67,8 @@ $(function() {
           }
      
     }
-   $(".acceptChallenge").html('');
-  $(".acceptChallenge").append('<button class="newChallenge">Get a Challenge</button>');
+    $(".acceptChallenge").html('');
+    $(".acceptChallenge").append('<button class="newChallenge">Get a Challenge</button>');
     $(".newChallenge").click(function() {
       $.ajax({
         url: "pick_challenge.php",
@@ -78,7 +78,7 @@ $(function() {
         },
         success:function(data){
           console.log("success",data);
-        changeChallenge(data);
+          changeChallenge(data);
         },
         error: function(data) {
           console.log("startNewGame error: ", data.responseText);
@@ -93,19 +93,19 @@ $(function() {
     $('.changeChallenge').html("");
     $(".acceptChallenge").html('');
      
-      $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
+    $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
             
-           $(".currentChallenge").append("<p>description:" +data["description"]+"</p>");
-            $(".currentChallenge").append("<p>description:" +data["skills"]["shoot"]+"</p>");
-            $(".currentChallenge").append("<p>description:" +data["skills"]["layup"]+"</p>");
-            $(".currentChallenge").append("<p>description:" +data["skills"]["rebound"]+"</p>");
-             $(".currentChallenge").append("<p>description:" +data["skills"]["defence"]+"</p>");
+    $(".currentChallenge").append("<p>Description:" +data["description"]+"</p>");
+    $(".currentChallenge").append("<p>Shoot:" +data["skills"]["shoot"]+"</p>");
+    $(".currentChallenge").append("<p>Layup:" +data["skills"]["layup"]+"</p>");
+    $(".currentChallenge").append("<p>Rebound:" +data["skills"]["rebound"]+"</p>");
+    $(".currentChallenge").append("<p>Defence:" +data["skills"]["defence"]+"</p>");
 
             
   
-  $(".acceptChallenge").html('');
-  $(".acceptChallenge").append('<button class="newestChallenge">If you do not like it, get a new Challenge</button>');
-  $(".newestChallenge").click(function() {
+    $(".acceptChallenge").html('');
+    $(".acceptChallenge").append('<button class="newestChallenge">If you do not like it, get a new Challenge</button>');
+    $(".newestChallenge").click(function() {
     $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
       $.ajax({
         url: "pick_challenge.php",
@@ -116,26 +116,26 @@ $(function() {
         success:function(data){
           console.log("success",data);
           $(".acceptChallenge").html('');
-            $('.currentChallenge').html('');
+          $('.currentChallenge').html('');
      
         
-            $('.changeChallenge').append("<h3>This is your challenge:</h3> <br>");
+          $('.changeChallenge').append("<h3>This is your challenge:</h3> <br>");
           $(".changeChallenge").append("<p>description:" +data["description"]+"</p>");
-            $(".changeChallenge").append("<p>description:" +data["skills"]["shoot"]+"</p>");
-            $(".changeChallenge").append("<p>description:" +data["skills"]["layup"]+"</p>");
-            $(".changeChallenge").append("<p>description:" +data["skills"]["rebound"]+"</p>");
-             $(".changeChallenge").append("<p>description:" +data["skills"]["defence"]+"</p>");
-             changeChallenge(data);
+          $(".changeChallenge").append("<p>description:" +data["skills"]["shoot"]+"</p>");
+          $(".changeChallenge").append("<p>description:" +data["skills"]["layup"]+"</p>");
+          $(".changeChallenge").append("<p>description:" +data["skills"]["rebound"]+"</p>");
+          $(".changeChallenge").append("<p>description:" +data["skills"]["defence"]+"</p>");
+      changeChallenge(data);
      
             
        
-        },
-        error: function(data) {
-          console.log("startNewGame error: ", data.responseText);
-        }
+          },
+          error: function(data) {
+            console.log("startNewGame error: ", data.responseText);
+          }
 
       });
-    });
+  });
 
 }
 

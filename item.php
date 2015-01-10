@@ -13,14 +13,15 @@ $ds = new DBObjectSaver(array(
 
 
 
- $items = &$ds->items;
 
- if (isset($_REQUEST["changeItem"])) {
-	 $random_item_number = $_REQUEST["changeItem"]; 
-	
-	
-} else {
-	$random_item_number = rand(0, count($items)-1);
-}
-$random_item = $items[$random_item_number];
-echo(json_encode(array("random_item" => $random_item, "random_item_number" => $random_item_number)));
+
+
+
+
+$random_tool = $item_properties[rand(0, count($item_properties)-1)];
+ 
+
+
+$ds->available_tools[] = New Item($random_tool);
+  
+

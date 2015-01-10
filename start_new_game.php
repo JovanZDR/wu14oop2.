@@ -65,117 +65,115 @@ unset($ds->characters);
 $challenges[] = new Challenge(
   "You are in Karlskrona. There is a lot of wind. 
   Playing basketball in Karlskrona can be very hard, 
-  there is a lot of wind today",
+  there is a lot of wind today. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 40,
-    "defence" => 0
+    "defence" => 0,
   )
 );
 $challenges[] = new Challenge(
   "You are in Lund. 
   Playing basketball in Lund can be very tough, 
-  there are many wild people in the audience",
+  there are many wild people in the audience. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 40,
-    "defence" => 0
+    "defence" => 0,
   )
 );
 $challenges[] = new Challenge(
   "You are in Ystad. 
   Playing basketball in Ystad can be really fun if you are well prepared. 
-  Ystad is very sharming city",
+  Ystad is very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 $challenges[] = new Challenge(
   "You are in Copenhagen. 
   Playing basketball in Copenhagen can be really fun if you are well prepared. 
-  Copenhagen is very sharming city",
+  Copenhagen is very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 $challenges[] = new Challenge(
   "You are in Stockholm. There is a lot of snow. 
   Playing basketball in Stockholm can be very hard, 
-  especially in winter",
+  especially in winter. You need to have the following skills if you want to win.",
   array(
     "shoot" => 80,
     "layup" => 30,
     "rebound" => 40,
-    "defence" => 0
+    "defence" => 0,
   )
 );
 $challenges[] = new Challenge(
   "You are in Oslo. 
   Playing basketball in Oslo can be really fun if you are well prepared. 
-  Oslo is a very sharming city",
+  Oslo is a very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 $challenges[] = new Challenge(
   "You are in Lomma. 
   Playing basketball in Lomma can be really fun if you are well prepared. 
-  Lomma is a very sharming city",
+  Lomma is a very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 $challenges[] = new Challenge(
   "You are in Helsinborg. 
   Playing basketball in Helsinborg can be really fun if you are well prepared. 
-  Helsinborg is a very sharming city",
+  Helsinborg is a very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 $challenges[] = new Challenge(
   "You are in Goteborg. 
   Playing basketball in Goteborg can be really fun if you are well prepared. 
-  Goteborg is a very sharming city",
+  Goteborg is a very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 $challenges[] = new Challenge(
   "You are in Malmo. 
   Playing basketball in Malmo can be really fun if you are well prepared. 
-  Malmo is a very sharming city",
+  Malmo is a very sharming city. You need to have the following skills if you want to win.",
   array(
     "shoot" => 50,
     "layup" => 60,
     "rebound" => 0,
-    "defence" => 40
+    "defence" => 40,
   )
 );
 
 
-//$random_number = rand(0, count($challenges)-1);
-//$random_challenge = $challenges[$random_number];
 
 
 
@@ -184,19 +182,42 @@ $challenges[] = new Challenge(
 
 
 
-
-
-$items[] = New Item("Socks", array("shoot" => 40 ));
-$items[] = New Item("Tape", array("layup" => 20 ));
-$items[] = New Item("Water", array("defence" => 30 ));
-$items[] = New Item("Gatorade", array("rebound" => 20 ));
-$items[] = New Item("Pepsi", array("shoot" => 10 ));
-$items[] = New Item("Shoes", array("layup" => 30 ));
-$items[] = New Item("Lemonade", array("rebound" => 10 ));
-$items[] = New Item("Sandwich", array("layup" => 15 ));
-$items[] = New Item("Chocolate", array("shoot" => 10 ));
-$items[] = New Item("Meat", array("defence" => 15 ));
- 
-//$random_index = rand(0, count($items)-1);
-//$random_tool = $items[$random_index];
+$tool_properties = array(
+  array("description" => "Socks", 
+    "skills" => array("shoot" => 40, 
+    ),
+  ),
+  array("description" => "Tape", 
+    "skills" => array("layup" => 20, 
+    ),
+  ),
+  array("description" => "Water", 
+    "skills" => array("defence" => 30, 
+    ),
+  ),
+  array("description" => "Gatorade", 
+    "skills" => array("rebound" => 20, 
+    ),
+  ),
+  array("description" => "Pepsi", 
+    "skills" => array("shoot" => 10, 
+    ),
+  ),
+  array("description" => "Shoes", 
+    "skills" => array("layup" => 30, 
+    ),
+  ),
+  array("description" => "Lemonade", 
+    "skills" => array("rebound" => 10, 
+    ),
+  ),
+  array("description" => "Sandwich", 
+    "skills" => array("layup" => 20, 
+    ),
+  ),
+   array("description" => " Chocolate", 
+    "skills" => array("layup" => 10, 
+    ),
+  ),
+);
 
