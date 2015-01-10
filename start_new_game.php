@@ -182,7 +182,7 @@ $challenges[] = new Challenge(
 
 
 
-$tool_properties = array(
+$item_properties = array(
   array("description" => "Socks", 
     "skills" => array("shoot" => 40, 
     ),
@@ -220,4 +220,10 @@ $tool_properties = array(
     ),
   ),
 );
+$random_tool = $item_properties[rand(0, count($item_properties)-1)];
+ 
+$ds->available_tools[] = New Item($random_tool["description"],$random_tool["skills"]);
+
+
+
 
