@@ -90,23 +90,43 @@ $(function() {
   
  
   function changeChallenge(data){
+     
     $('.changeChallenge').html("");
     $(".acceptChallenge").html('');
      
     $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
             
-    $(".currentChallenge").append("<p>Description:" +data["description"]+"</p>");
+    $(".currentChallenge").append("<p>" +data["description"]+"</p>");
     $(".currentChallenge").append("<p>Shoot:" +data["skills"]["shoot"]+"</p>");
     $(".currentChallenge").append("<p>Layup:" +data["skills"]["layup"]+"</p>");
     $(".currentChallenge").append("<p>Rebound:" +data["skills"]["rebound"]+"</p>");
     $(".currentChallenge").append("<p>Defence:" +data["skills"]["defence"]+"</p>");
-
+    
+   
+    $(".carryOutChallenge").html('');
+    $(".carryOutChallenge").append('<button class="likeTheChallenge">But If you like it,PRESS HERE</button>');
+    $(".likeTheChallenge").click(function() {
+    
+      
+    });
+     
             
   
+
+
+
+
+
+
+
+
+
+
+
     $(".acceptChallenge").html('');
     $(".acceptChallenge").append('<button class="newestChallenge">If you do not like it, get a new Challenge</button>');
     $(".newestChallenge").click(function() {
-    $('.currentChallenge').append("<h3>This is your challenge:</h3> <br>");
+    
       $.ajax({
         url: "pick_challenge.php",
         dataType: "json",
@@ -117,14 +137,19 @@ $(function() {
           console.log("success",data);
           $(".acceptChallenge").html('');
           $('.currentChallenge').html('');
-     
+
         
           $('.changeChallenge').append("<h3>This is your challenge:</h3> <br>");
-          $(".changeChallenge").append("<p>description:" +data["description"]+"</p>");
+          $(".changeChallenge").append("<p>" +data["description"]+"</p>");
           $(".changeChallenge").append("<p>description:" +data["skills"]["shoot"]+"</p>");
           $(".changeChallenge").append("<p>description:" +data["skills"]["layup"]+"</p>");
           $(".changeChallenge").append("<p>description:" +data["skills"]["rebound"]+"</p>");
           $(".changeChallenge").append("<p>description:" +data["skills"]["defence"]+"</p>");
+
+          $(".carryOutChallenge").html('');
+          $(".carryOutChallenge").append('<button class="likeTheChallenge">But If you like it,PRESS HERE</button>');
+
+
       changeChallenge(data);
      
             
@@ -135,9 +160,11 @@ $(function() {
           }
 
       });
-  });
+    });
 
-}
+
+  }
+
 
   
   

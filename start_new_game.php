@@ -2,7 +2,7 @@
 
 include_once("nodebite-swiss-army-oop.php");
 
-$ds = new DBObjectSaver(array(
+$ds = New DBObjectSaver(array(
   "host" => "127.0.0.1",
   "dbname" => "wu14oop2",
   "username" => "root",
@@ -16,7 +16,7 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 	$humanName = $_REQUEST["characterName"];
 	$humanClass = $_REQUEST["characterClass"];
 
-		$ds->characters[] = new $humanClass($humanName);
+		$ds->characters[] = New $humanClass($humanName);
 		$character = &$ds->characters[0];
 		$human_val_now = array(
 			"name" => $character->name,
@@ -53,6 +53,7 @@ $computer_player[] = New $random_class("Comp2");
 unset($ds->challenges);
 unset($ds->items);
 unset($ds->characters);
+unset($ds->available_items);
 
  $challenges = &$ds->challenges;
  $items = &$ds->items;
@@ -62,7 +63,8 @@ unset($ds->characters);
 
 
 
-$challenges[] = new Challenge(
+
+$challenges[] = New Challenge(
   "You are in Karlskrona. There is a lot of wind. 
   Playing basketball in Karlskrona can be very hard, 
   there is a lot of wind today. You need to have the following skills if you want to win.",
@@ -73,7 +75,7 @@ $challenges[] = new Challenge(
     "defence" => 0,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Lund. 
   Playing basketball in Lund can be very tough, 
   there are many wild people in the audience. You need to have the following skills if you want to win.",
@@ -84,7 +86,7 @@ $challenges[] = new Challenge(
     "defence" => 0,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Ystad. 
   Playing basketball in Ystad can be really fun if you are well prepared. 
   Ystad is very sharming city. You need to have the following skills if you want to win.",
@@ -95,7 +97,7 @@ $challenges[] = new Challenge(
     "defence" => 40,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Copenhagen. 
   Playing basketball in Copenhagen can be really fun if you are well prepared. 
   Copenhagen is very sharming city. You need to have the following skills if you want to win.",
@@ -106,7 +108,7 @@ $challenges[] = new Challenge(
     "defence" => 40,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Stockholm. There is a lot of snow. 
   Playing basketball in Stockholm can be very hard, 
   especially in winter. You need to have the following skills if you want to win.",
@@ -117,7 +119,7 @@ $challenges[] = new Challenge(
     "defence" => 0,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Oslo. 
   Playing basketball in Oslo can be really fun if you are well prepared. 
   Oslo is a very sharming city. You need to have the following skills if you want to win.",
@@ -128,7 +130,7 @@ $challenges[] = new Challenge(
     "defence" => 40,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Lomma. 
   Playing basketball in Lomma can be really fun if you are well prepared. 
   Lomma is a very sharming city. You need to have the following skills if you want to win.",
@@ -139,7 +141,7 @@ $challenges[] = new Challenge(
     "defence" => 40,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Helsinborg. 
   Playing basketball in Helsinborg can be really fun if you are well prepared. 
   Helsinborg is a very sharming city. You need to have the following skills if you want to win.",
@@ -150,7 +152,7 @@ $challenges[] = new Challenge(
     "defence" => 40,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Goteborg. 
   Playing basketball in Goteborg can be really fun if you are well prepared. 
   Goteborg is a very sharming city. You need to have the following skills if you want to win.",
@@ -161,7 +163,7 @@ $challenges[] = new Challenge(
     "defence" => 40,
   )
 );
-$challenges[] = new Challenge(
+$challenges[] = New Challenge(
   "You are in Malmo. 
   Playing basketball in Malmo can be really fun if you are well prepared. 
   Malmo is a very sharming city. You need to have the following skills if you want to win.",
@@ -220,9 +222,9 @@ $item_properties = array(
     ),
   ),
 );
-$random_tool = $item_properties[rand(0, count($item_properties)-1)];
+$random_item = $item_properties[rand(0, count($item_properties)-1)];
  
-$ds->available_tools[] = New Item($random_tool["description"],$random_tool["skills"]);
+$ds->available_items[] = New Item($random_item["description"],$random_item["skills"]);
 
 
 
