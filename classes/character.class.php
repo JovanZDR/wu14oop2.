@@ -35,6 +35,7 @@ class Character{
    
       		$items[] = $lost_items[0];
     	}
+    }
     public function acceptChallenge($challenge, $characters) {
     
     	$result = array();
