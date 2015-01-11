@@ -54,7 +54,7 @@ if($companionIndex){
 
 	   
 	    $opponent->success -= 5;
-	    $opponent->loseTool($ds->available_items);
+	  //  $opponent->loseTool($ds->available_items);
 
 		}
 } 	else {
@@ -70,7 +70,7 @@ if($companionIndex){
 
 
 	  $last->success -= 5;
-	  $last->loseTool($ds->available_items);
+	//  $last->loseTool($ds->available_items);
 	}
 
 
