@@ -67,6 +67,7 @@ $(function() {
           }
      
     }
+
     $(".acceptChallenge").html('');
     $(".acceptChallenge").append('<button class="newChallenge">Get a Challenge</button>');
     $(".newChallenge").click(function() {
@@ -110,8 +111,8 @@ $(function() {
       $(".carryOutChallenge").html('');
 
       $(".carryOutChallengeWithCompanion").html('');
-      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWFriend" id="1P" name="PLy"><label>Play with a friend</label><br>');
-      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWFriend" id="2p"name="PLy"><label>Be a brave player and  play alone</label><br>');
+      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayFriend" id="1P" name="PLy"><label>Play with a friend</label><br>');
+      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWithoutFriend" id="2p"name="PLy"><label>Be a brave player and  play alone</label><br>');
       $(".carryOutChallengeWithCompanion").append('<button class="startPlaying">Submit and START PLAYING</button>');
 
     });

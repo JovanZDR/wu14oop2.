@@ -20,7 +20,6 @@ if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 		$character = &$ds->characters[0];
 		$human_val_now = array(
 			"name" => $character->name,
-      "player"=>$character
 			"shootStrength" => $character->shootStrength, 
 			"layupStrength" => $character->layupStrength, 
 			"reboundStrength" => $character->reboundStrength,
