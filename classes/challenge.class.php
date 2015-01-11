@@ -18,7 +18,7 @@ class Challenge {
 			$needed = $points;
 			$has = $character->{$skill."Strength"};
 
-			if(count($items) > 0) {
+			//if(count($items) > 0) {
 				for ($i=0; $i < count($character->items) ; $i++) { 
 					foreach ($character>$items[$i]->skills as $ItemSkill => $value) {
 							if ($ItemSkill == $skill) {
@@ -26,7 +26,7 @@ class Challenge {
 							}
 					}	
 				}
-			}
+			//}
 			$sum += $has > $needed ? $needed : $has ;
 		}
 
@@ -60,8 +60,8 @@ class Challenge {
 		$rand = rand(0,100);
 
 		foreach ($matches as $match) {
-			if ($rand >= $count && $rand < $match["$winChancePercent"] + $count) {
-				return $match["$character"];
+			if ($rand >= $count && $rand < $match["winChancePercent"] + $count) {
+				return $match["character"];
 			}
 			$count += $match["winChancePercent"];
 		}
