@@ -12,11 +12,11 @@ $ds = New DBObjectSaver(array(
 ));
 
 
-//this should be delivered with AJAX
+
 $companion_index = isset($_REQUEST["companionIndex"]) ? $_REQUEST["companionIndex"] : false;
 
 
-// prevent crash
+
 if (count($ds->players) < 2) {
   echo(json_encode(false));
   exit;
