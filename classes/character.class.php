@@ -23,11 +23,11 @@ class Character{
 	      array_splice($items, $random_item_index, 1);
     	}
 	}
-    public function loseTool(&$items) {
+    public function looseTool(&$items) {
     
-    	if (count($this->items) > 0) {
+    	if (count($this->tools) > 0) {
    
-      		$random_item = rand(0, count($this->items)-1);
+      		$random_tool = rand(0, count($this->tools)-1);
 
  
       		$lost_item = array_splice($this->items, $random_item, 1);
