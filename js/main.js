@@ -129,7 +129,7 @@ $(function() {
           success:function(data){
             console.log("start Challenge success",data);
             
-            $(".currentChallenge").append("<p>The winner is:" +data["result"][0]+"</p>");
+            $(".currentChallenge").append("<p>The winner is:" +data["result"][0].name+"</p>");
             
             
           },
