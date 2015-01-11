@@ -25,9 +25,9 @@ class Character{
 	}
     public function loseTool(&$items) {
     
-    	if (count($this->tools) > 0) {
+    	if (count($this->items) > 0) {
    
-      		$random_tool = rand(0, count($this->tools)-1);
+      		$random_tool = rand(0, count($this->items)-1);
 
  
       		$lost_item = array_splice($this->items, $random_item, 1);

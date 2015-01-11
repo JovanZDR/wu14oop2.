@@ -42,7 +42,7 @@ if($companionIndex){
   	$characters[] = $opponent;
 
   
-  	$result = $human_player->doChallengeWithFriend($ds->current_challenge[0], $human_player, $companion, $opponent);
+  	$result = $human_player->doChallengeWithFriend($ds->current_challenge[0],$characters);
 
   
   	$winner = $result[0];

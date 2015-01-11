@@ -16,7 +16,7 @@ class Challenge {
 
 		foreach ($this->skills as $skill => $points) {
 			$needed = $points;
-			$has = $character->{$skills."Strength"};
+			$has = $character->{$skill."Strength"};
 
 			if(count($items) > 0) {
 				for ($i=0; $i < count($character->items) ; $i++) { 
@@ -30,6 +30,7 @@ class Challenge {
 		}
 
 		$sum += $has > $needed ? $needed : $has ; $max += $needed;
+		return $sum/$max;
 
 	}
 
