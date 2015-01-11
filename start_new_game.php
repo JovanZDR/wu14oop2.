@@ -38,7 +38,7 @@ echo(json_encode($human_val_now));
 $all_classes = array("Kobebryant", "Lebronjames", "Michaeljordan");
 for ($i=0; $i < count($all_classes); $i++) { 
   if ($all_classes[$i] != $humanClass) {
-    $ds->characters[] = New $all_classes[$i]("Bot".$i, $ds);
+    $ds->characters[] = New $all_classes[$i]("Comp".$i);
   }
 }
 
