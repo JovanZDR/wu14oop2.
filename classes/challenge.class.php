@@ -18,7 +18,7 @@ class Challenge {
 			$needed = $points;
 			$has = $character->{$skills."Strength"};
 
-			if($character(count($items)) > 0) {
+			if(count($items) > 0) {
 				for ($i=0; $i < count($character->items) ; $i++) { 
 					foreach ($character>$items[$i]->skills as $ItemSkill => $value) {
 							if ($ItemSkill == $skill) {
