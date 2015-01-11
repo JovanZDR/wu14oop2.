@@ -129,6 +129,9 @@ $(function() {
           success:function(data){
             console.log("start Challenge success",data);
             
+            $(".currentChallenge").append("<p>The winner is:" +data["result"][0]+"</p>");
+            
+            
           },
           error: function(data) {
             console.log("start Challenge error: ", data.responseText);

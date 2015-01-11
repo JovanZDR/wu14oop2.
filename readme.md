@@ -1,0 +1,1 @@
+I did everything for Godkänt, but loseTool method(commented it out) and also did not send the winner on the client side.
