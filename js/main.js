@@ -111,10 +111,31 @@ $(function() {
       $(".carryOutChallenge").html('');
 
       $(".carryOutChallengeWithCompanion").html('');
-      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayFriend" id="1P" name="PLy"><label>Play with a friend</label><br>');
+      $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWFriend" id="1P" name="PLy"><label>Play with a friend</label><br>');
       $(".carryOutChallengeWithCompanion").append('<input type="radio" value="PLayWithoutFriend" id="2p"name="PLy"><label>Be a brave player and  play alone</label><br>');
       $(".carryOutChallengeWithCompanion").append('<button class="startPlaying">Submit and START PLAYING</button>');
+      $(".startPlaying").click(function(){
+        var companionChoice = $(".carryOutChallengeWithCompanion input[type= 'radio']:checked").val();
+        var companionIndex;
+        if (companionChoice == "PLayWFriend" ) {
+          companionIndex = 1;
+        }
+          $.ajax({
+          url: "start_challenge.php",
+          dataType: "json",
+          data: {
+              companionIndex: companionIndex
+          },
+          success:function(data){
+            console.log("start Challenge success",data);
+            
+          },
+          error: function(data) {
+            console.log("start Challenge error: ", data.responseText);
+        }
+      });
 
+      });
     });
      
             
