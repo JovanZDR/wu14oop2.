@@ -10,7 +10,10 @@ $ds = New DBObjectSaver(array(
   "prefix" => "wu14oop2",
 ));
 
-
+unset($ds->challenges);
+unset($ds->items);
+unset($ds->characters);
+unset($ds->available_items);
 
 if (isset($_REQUEST["characterName"]) && isset($_REQUEST["characterClass"])) {
 	$humanName = $_REQUEST["characterName"];
@@ -42,10 +45,7 @@ for ($i=0; $i < count($all_classes); $i++) {
   }
 }
 
-unset($ds->challenges);
-unset($ds->items);
-unset($ds->characters);
-unset($ds->available_items);
+
 
  $challenges = &$ds->challenges;
  $items = &$ds->items;
