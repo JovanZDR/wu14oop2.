@@ -52,7 +52,7 @@ class Challenge {
 		return $matches;
 	}
 
-	public function playChallenge() {
+	public function playChallenge($characters) {
 		$matches = $this->winChances($characters);
 		$count = 0;
 		$rand = rand(0,100);
