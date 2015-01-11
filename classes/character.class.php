@@ -23,7 +23,7 @@ class Character{
 	      array_splice($items, $random_item_index, 1);
     	}
 	}
-    public function looseTool(&$items) {
+    public function loseTool(&$items) {
     
     	if (count($this->tools) > 0) {
    

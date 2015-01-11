@@ -17,7 +17,22 @@ $companion_index = isset($_REQUEST["companionIndex"]) ? $_REQUEST["companionInde
 
 
 
-if (count($ds->players) < 2) {
+if (count($ds->characters) < 2) {
   echo(json_encode(false));
   exit;
 }
+$human_player = $ds->characters[0];
+
+
+if($companionIndex == 1){
+	$random_index_number = rand(1,2);
+	$companion = $ds->characters[$random_index_number];
+		if ($random_index_number = 1 ) {
+			$oponent = $ds->characters[2];
+		}else{
+			$oponent = $ds->characters[1]; 
+		}
+
+	}
+
+ 
