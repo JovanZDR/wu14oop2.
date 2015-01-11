@@ -28,9 +28,10 @@ class Challenge {
 				}
 			//}
 			$sum += $has > $needed ? $needed : $has ;
+			$max += $needed;
 		}
 
-		 $max += $needed;
+		 
 		return $sum/$max;
 
 	}

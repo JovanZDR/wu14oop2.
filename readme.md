@@ -1,1 +1,1 @@
-I did everything for Godkänt, but loseTool method(commented it out).
+I did everything for a Godkänt, but the loseTool method(commented it out).
