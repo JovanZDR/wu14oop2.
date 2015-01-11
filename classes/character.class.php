@@ -23,19 +23,19 @@ class Character{
 	      array_splice($items, $random_item_index, 1);
     	}
 	}
-    public function looseTool(&$items) {
+    //public function looseTool(&$items) {
     
-    	if (count($this->tools) > 0) {
+    //	if (count($this->tools) > 0) {
    
-      		$random_tool = rand(0, count($this->tools)-1);
+    //  		$random_tool = rand(0, count($this->tools)-1);
 
  
-      		$lost_item = array_splice($this->items, $random_item, 1);
+     // 		$lost_item = array_splice($this->items, $random_item, 1);
 
    
-      		$items[] = $lost_items[0];
-    	}
-    }
+      //		$items[] = $lost_items[0];
+    //	}
+   // }
     public function acceptChallenge($challenge, $characters) {
     
     	$result = array();

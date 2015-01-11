@@ -27,9 +27,10 @@ class Challenge {
 					}	
 				}
 			}
+			$sum += $has > $needed ? $needed : $has ;
 		}
 
-		$sum += $has > $needed ? $needed : $has ; $max += $needed;
+		 $max += $needed;
 		return $sum/$max;
 
 	}
@@ -59,8 +60,8 @@ class Challenge {
 		$rand = rand(0,100);
 
 		foreach ($matches as $match) {
-			if ($rand >= $count && $rand < $match[$winChancePercent] + $count) {
-				return $match[$character];
+			if ($rand >= $count && $rand < $match["$winChancePercent"] + $count) {
+				return $match["$character"];
 			}
 			$count += $match["winChancePercent"];
 		}
